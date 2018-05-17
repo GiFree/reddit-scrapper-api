@@ -3,12 +3,12 @@
     "module": "commonjs",
     "removeComments": true,
     "preserveConstEnums": true,
-    "outDir": "./build/server",
+    "outDir": "./build",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "src/client/*": [
-        "./src/client/*"
+        "./src/*"
       ]
     },
     "pretty": true,
