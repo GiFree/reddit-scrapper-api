@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "./build/server",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/client/*": [
+        "./src/client/*"
+      ]
+    },
+    "pretty": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
