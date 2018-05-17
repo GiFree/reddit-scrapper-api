@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "npm run tsc && nodemon .\\build\\server\\server.js",
-    "start": "npm run tsc && node .\\build\\server\\server.js",
+    "nodemon": "npm run tsc && nodemon .\\build\\server.js",
+    "start": "npm run tsc && node .\\build\\server.js",
     "tsc": "tsc",
     "tslint": "tslint"
   },
