@@ -23,18 +23,21 @@ interface EvaluateData {
 }
 
 
-const redditScrapper = async (options, handleImage) => {
+const redditScrapper = async (options) => {
   const browser = await puppeteer.launch();
 
   const page = await browser.newPage();
   await page.goto(`https://reddit.com/r/${options.subReddit}/`);
 
-  scrapThumbnails(options, browser, page)
+  return scrapThumbnails(options, browser, page)
     .then((images) => {
       console.log('After sort: ', images.length);
       browser.close();
       console.log('download started');
-      return downloadImages(images, options, handleImage);
+      return downloadImages(images, options)
+        .then((array) => {
+          return Promise.all(array);
+        })
     })
     .catch((err) => {
       browser.close();

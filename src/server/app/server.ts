@@ -87,27 +87,35 @@ app.post('/download', (req, res, next) => {
       subReddit: req.body.subReddit,
       screenshot: false,
     };
-    const addImageToDataBase = (image: Image) => {
 
-      ImageModel.create(image)
-        .then(() => {
-          console.log('created', image.hash);
+    redditScrapper(options)
+      .then((images) => {
+        //HANDLE IMAGES
+        const processed = images.map((image) => {
+          console.log(image)
+          ImageModel.create(image)
+            .then(() => {
+              return true;
+            })
+            .catch((err) => {
+              return false;
+            })
         })
-        .catch((err) => {
-          console.log('error: ', err.message);
-        })
+        Promise.all(processed)
+          .then(() => {
+            return res.send({ message: 'Processing done!' });
+          })
+          .catch((err) => {
+            return res.send({ message: err.message });
+          })
 
-    }
-    redditScrapper(options, addImageToDataBase)
-      .then(() => {
-        console.log('server console.log');
       })
       .catch((err) => {
-        console.log('OMG ERROR: ', err.message);
+        return res.send({ message: err.message });
       });
-    res.send({ message: 'Processing started it can take few minutes' });
+
   } else {
-    res.send({ message: 'Please post valid data!' });
+    return res.send({ message: 'Please post valid data!' });
   }
 
 
@@ -156,3 +164,7 @@ app.get('/*', (req, res, next) => {
 app.listen(3001).on('listening', () => {
   console.log('Server stardet at port 3000');
 });
+
+app.post('/clear', (req, res, next) => {
+  ImageModel.sync({ force: true });
+})

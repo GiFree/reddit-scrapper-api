@@ -5,10 +5,11 @@ import { redditScrapper } from './redditScrapper';
 
 
 const options = {
-  numOfImages: 57,
-  subReddit: 'memes',
+  numOfImages: 33,
+  subReddit: 'ImaginaryLandscapes',
 };
 console.log('START');
-redditScrapper(options, (image) => {
-  console.log(image);
-});
+redditScrapper(options)
+  .then((images: any) => {
+    (console.log(images.length))
+  })
