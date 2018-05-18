@@ -4,7 +4,7 @@
   "description": "Reddit images available in my own service",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register src/**/xd.test.ts",
+    "test": "jest",
     "nodemon": "npm run tsc && nodemon .\\build\\server.js",
     "start": "npm run tsc && node .\\build\\server.js",
     "tsc": "tsc",
@@ -35,12 +35,11 @@
     "tslint-config-airbnb": "5.8.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.3",
-    "@types/mocha": "^5.2.0",
-    "chai": "^4.1.2",
-    "mocha": "^5.1.1",
+    "@types/jest": "22.2.3",
+    "jest": "22.4.3",
     "nodemon": "1.17.3",
-    "ts-node": "^6.0.3",
+    "ts-jest": "22.4.6",
+    "ts-node": "6.0.3",
     "tslint": "5.9.1",
     "typescript": "2.7.2"
   }
