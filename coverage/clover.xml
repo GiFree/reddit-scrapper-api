@@ -1,24 +1,371 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1526634614376" clover="3.2.0">
-  <project timestamp="1526634614376" name="All files">
-    <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="9" coveredelements="9" complexity="0" loc="7" ncloc="7" packages="2" files="2" classes="2">
+<coverage generated="1526897995668" clover="3.2.0">
+  <project timestamp="1526897995669" name="All files">
+    <metrics statements="282" coveredstatements="176" conditionals="20" coveredconditionals="8" methods="100" coveredmethods="46" elements="402" coveredelements="230" complexity="0" loc="282" ncloc="282" packages="10" files="18" classes="18">
       <package name="build">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="xd.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\xd.js">
-          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="45" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="6"/>
+        <file name="app.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\app.js">
+          <metrics statements="38" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="5"/>
           <line num="2" count="1" type="stmt"/>
           <line num="3" count="1" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
           <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="18" count="1" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="35" count="1" type="stmt"/>
+          <line num="36" count="1" type="stmt"/>
+          <line num="37" count="1" type="stmt"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="39" count="2" type="stmt"/>
+          <line num="41" count="2" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="47" count="1" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="60" count="1" type="stmt"/>
+          <line num="61" count="1" type="stmt"/>
+          <line num="63" count="1" type="stmt"/>
+        </file>
+        <file name="config.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\config.js">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="8" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="build.models">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="ImageModel.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\models\ImageModel.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="build.routes">
+        <metrics statements="37" coveredstatements="23" conditionals="6" coveredconditionals="4" methods="19" coveredmethods="9"/>
+        <file name="delete.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\routes\delete.js">
+          <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+        </file>
+        <file name="download.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\routes\download.js">
+          <metrics statements="17" coveredstatements="6" conditionals="4" coveredconditionals="2" methods="8" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="37" count="1" type="stmt"/>
+        </file>
+        <file name="list.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\routes\list.js">
+          <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="32" count="3" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="build.scrapper">
+        <metrics statements="17" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <file name="redditScrapper.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\scrapper\redditScrapper.js">
+          <metrics statements="17" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="build.scrapper.functions">
+        <metrics statements="42" coveredstatements="20" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="7"/>
+        <file name="downloadImages.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\scrapper\functions\downloadImages.js">
+          <metrics statements="18" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="6"/>
+          <line num="2" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="19" count="2" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+        </file>
+        <file name="scrapThumbnails.js" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\build\scrapper\functions\scrapThumbnails.js">
+          <metrics statements="24" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="1"/>
+          <line num="2" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
         </file>
       </package>
       <package name="src">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="xd.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\xd.ts">
-          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="42" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="6"/>
+        <file name="app.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\app.ts">
+          <metrics statements="37" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="5"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+          <line num="44" count="1" type="stmt"/>
+          <line num="45" count="1" type="stmt"/>
+          <line num="46" count="1" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="56" count="1" type="stmt"/>
+          <line num="57" count="2" type="stmt"/>
+          <line num="59" count="2" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="66" count="1" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
+          <line num="82" count="1" type="stmt"/>
+          <line num="83" count="1" type="stmt"/>
+          <line num="86" count="1" type="stmt"/>
+        </file>
+        <file name="config.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\config.ts">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="14" count="8" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="36" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.models">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="ImageModel.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\models\ImageModel.ts">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.routes">
+        <metrics statements="34" coveredstatements="20" conditionals="6" coveredconditionals="4" methods="19" coveredmethods="9"/>
+        <file name="delete.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\routes\delete.ts">
+          <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+        </file>
+        <file name="download.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\routes\download.ts">
+          <metrics statements="16" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="8" coveredmethods="1"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+        </file>
+        <file name="list.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\routes\list.ts">
+          <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="34" count="3" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.scrapper">
+        <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <file name="redditScrapper.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\scrapper\redditScrapper.ts">
+          <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.scrapper.functions">
+        <metrics statements="40" coveredstatements="18" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="7"/>
+        <file name="downloadImages.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\scrapper\functions\downloadImages.ts">
+          <metrics statements="17" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="6"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="2" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="18" count="2" type="stmt"/>
+          <line num="20" count="2" type="stmt"/>
+          <line num="22" count="2" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+        </file>
+        <file name="scrapThumbnails.ts" path="C:\Users\Frank\Desktop\projekt-reddit\reddit-scrapper-api\src\scrapper\functions\scrapThumbnails.ts">
+          <metrics statements="23" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="1"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
         </file>
       </package>
     </metrics>

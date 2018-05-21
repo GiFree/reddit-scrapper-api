@@ -4,7 +4,7 @@
   "description": "Reddit images available in my own service",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run tsc && jest",
     "nodemon": "npm run tsc && nodemon .\\build\\server.js",
     "start": "npm run tsc && node .\\build\\server.js",
     "tsc": "tsc",
@@ -36,8 +36,10 @@
   },
   "devDependencies": {
     "@types/jest": "22.2.3",
+    "@types/supertest": "^2.0.4",
     "jest": "22.4.3",
     "nodemon": "1.17.3",
+    "supertest": "^3.1.0",
     "ts-jest": "22.4.6",
     "ts-node": "6.0.3",
     "tslint": "5.9.1",

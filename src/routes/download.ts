@@ -1,4 +1,4 @@
-import { ImageModel } from '../server';
+import { ImageModel } from '../app';
 import { redditScrapper } from '../scrapper/redditScrapper';
 
 
@@ -28,15 +28,15 @@ export const download = (req, res, next) => {
             return res.send({ message: 'Processing done!' });
           })
           .catch((err) => {
-            return res.send({ message: err.message });
+            return res.status(503).send({ message: err.message });
           })
 
       })
       .catch((err) => {
-        return res.send({ message: err.message });
+        return res.status(503).send({ message: err.message });
       });
 
   } else {
-    return res.send({ message: 'Please post valid data!' });
+    return res.status(400).send({ message: 'Please post valid data!' });
   }
 } 

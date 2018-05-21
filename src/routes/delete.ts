@@ -1,4 +1,4 @@
-import { ImageModel } from '../server';
+import { ImageModel } from '../app';
 
 export const deleteRoute = (req, res, next) => {
   ImageModel.destroy({
