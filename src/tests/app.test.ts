@@ -1,24 +1,22 @@
 import { seedData } from '../config';
-import app from '../app';
+import app, { ImageModel } from '../app';
 import * as request from 'supertest';
-import { ImageModel } from '../app';
-
 
 const seed = async () => {
   await ImageModel.sync({ force: true });
   return await Promise.all(seedData.map((image) => {
     return ImageModel.create(image);
-  }))
+  }));
 
-}
+};
 
 describe('Test the "/" path', () => {
   test('It should response the GET method with error 404', (done) => {
     return request(app)
       .get('/')
       .expect(404, done);
-  })
-})
+  });
+});
 
 // LIST.TS
 describe('Test the "/list" path', () => {
@@ -29,10 +27,10 @@ describe('Test the "/list" path', () => {
       .then((res) => {
         expect(res.body.response).toBeInstanceOf(Array);
         done();
-      })
-  })
+      });
+  });
 
-})
+});
 
 describe('Test the "/list:category" path for category 1', () => {
 
@@ -45,10 +43,10 @@ describe('Test the "/list:category" path for category 1', () => {
           .then((res) => {
             expect(res.body.response).toHaveLength(3);
             done();
-          })
-      })
-  })
-})
+          });
+      });
+  });
+});
 
 // TO BE REMOVED
 describe('Test the "/clear" path', () => {
@@ -61,9 +59,10 @@ describe('Test the "/clear" path', () => {
       .then((res) => {
         expect(res.body.message).toBe('Successfully cleared dropped table data');
         done();
-      })
+      });
 
-  })
+  });
+
   test('It response with empty Array', (done) => {
 
     request(app)
@@ -75,13 +74,13 @@ describe('Test the "/clear" path', () => {
           .then((res) => {
             expect(res.body.response).toEqual([]);
             done();
-          })
-      })
-  })
+          });
+      });
+  });
 
-})
+});
 
-//DELETE.TS
+// DELETE.TS
 describe('Test the /delete post request', () => {
   test('response with "Deleted 5 images"', (done) => {
     seed()
@@ -93,10 +92,10 @@ describe('Test the /delete post request', () => {
           .then((res) => {
             expect(res.body.message).toBe(`Deleted 5 images`);
             done();
-          })
+          });
 
-      })
-  })
+      });
+  });
 
   test('response with "None images with that category found!"', (done) => {
     request(app)
@@ -106,11 +105,11 @@ describe('Test the /delete post request', () => {
       .then((res) => {
         expect(res.body.message).toBe('None images with that category found!');
         done();
-      })
-  })
-})
+      });
+  });
+});
 
-//DONWLOAD.TS
+// DOWNLOAD.TS
 describe('Test the /download request', () => {
   test('It returns error when no data posted', (done) => {
     request(app)
@@ -119,8 +118,9 @@ describe('Test the /download request', () => {
       .then((res) => {
         expect(res.body.message).toBe('Please post valid data!');
         done();
-      })
-  })
+      });
+  });
+
   // THIS TEST NEED TO BE CONNECTED TO INTERNET
   // COMMENTED CAUSE OF LONGER EXECUTION TIME THAN TIMEOUT SET BY JEST
   // test('Adds data to database from specified category and specified length', (done) => {
@@ -133,4 +133,4 @@ describe('Test the /download request', () => {
   //       done();
   //     })
   // })
-})
+});

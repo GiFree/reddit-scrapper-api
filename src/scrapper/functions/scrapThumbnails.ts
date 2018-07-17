@@ -3,10 +3,10 @@ import * as puppeteer from 'puppeteer';
 import { Image, ScrapParams } from '../redditScrapper';
 
 
-
+/* tslint:disable-next-line max-line-length */
 export const scrapThumbnails = async (params: ScrapParams, browser: puppeteer.Browser, page: puppeteer.Page) => {
-  // wait 10 seconds for reddit to load next posts
-  setTimeout(() => { }, 5000)
+  // wait few seconds for reddit to load next posts
+  setTimeout(() => { }, 5000);
 
   await page.waitForSelector('img.media-element');
   await page.evaluate(() => {
@@ -19,25 +19,28 @@ export const scrapThumbnails = async (params: ScrapParams, browser: puppeteer.Br
 
   // collect image titles and hrefs from page
   const evaluatedData: Image[] = await page.evaluate((param) => {
-    // browser code -- start
-    let elements = Array.from(document.querySelectorAll('img.media-element'));
-    // if (param.collectedAmount && param.collectedAmount > 0) {
-    //   elements = elements.splice(param.collectedAmount + 1);
-    // }
+    // BROWSER CODE -- start
+
+    const elements = Array.from(document.querySelectorAll('img.media-element'));
+
     return elements.map((post: HTMLImageElement) => {
       const href = post.src;
       const parent: any = post.parentElement.parentElement.parentElement;
       const title = parent.href.split('/')[7].split('_').join(' ');
       const postLink = parent.href;
-      post.className = ".done";
+      post.className = '.done';
       return { title, href, postLink };
     });
-    // browser code -- end
+
+    // BROWSER CODE -- end
+
+    /* tslint:disable-next-line align */
   }, params);
+
   images = images.concat(evaluatedData);
 
   if (images.length > params.numOfImages) {
-    images.splice(params.numOfImages)
+    images.splice(params.numOfImages);
 
   } else if (images.length < params.numOfImages) {
 

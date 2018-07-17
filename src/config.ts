@@ -5,7 +5,6 @@ const sequelizeConfig = {
   password: 'Q@wertyuiop',
   dialect: 'postgres',
   host: 'localhost',
-  port: 5432,
 };
 
 
@@ -16,9 +15,9 @@ const newImage = (num, cat) => {
     postLink: num,
     extension: num,
     hash: num,
-    category: cat
-  }
-}
+    category: cat,
+  };
+};
 
 const seedData = [
   newImage('1', '1'),
@@ -29,7 +28,7 @@ const seedData = [
   newImage('6', '2'),
   newImage('7', '2'),
   newImage('8', '2'),
-]
+];
 
 
 

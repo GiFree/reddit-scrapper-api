@@ -1,4 +1,3 @@
-import { redditScrapper } from '../scrapper/redditScrapper';
 import { downloadImages } from '../scrapper/functions/downloadImages';
 import { scrapThumbnails } from '../scrapper/functions/scrapThumbnails';
 import * as fse from 'fs-extra';
@@ -8,19 +7,20 @@ const options = {
   numOfImages: 2,
   subReddit: 'memes',
   screenshot: false,
-}
+};
 
 const images = [
   {
     title: 'image1',
-    href: 'https://vignette.wikia.nocookie.net/arianagrande/images/7/70/Example.png/revision/latest?cb=20160301231046'
+    /* tslint:disable-next-line max-line-length */
+    href: 'https://vignette.wikia.nocookie.net/arianagrande/images/7/70/Example.png/revision/latest?cb=20160301231046',
   },
   {
     title: 'image2',
-    href: 'http://www.for-example.org/img/main/forexamplelogo.png'
+    href: 'http://www.for-example.org/img/main/forexamplelogo.png',
   },
 
-]
+];
 
 // set JEST timeout to 10 seconds as scrapThumbnails has its own 5 sec timeout
 jest.setTimeout(350000);
@@ -35,11 +35,11 @@ describe('Test downloadImages', () => {
               .then((res) => {
                 expect(res).toHaveLength(2);
                 done();
-              })
-          })
-      })
-  })
-})
+              });
+          });
+      });
+  });
+});
 
 describe('Test scrapThumbnails', () => {
   test('It returns images objects with title, href, postLink', (done) => {
@@ -58,7 +58,7 @@ describe('Test scrapThumbnails', () => {
           });
           browser.close();
           done();
-        })
+        });
     })();
-  })
-})
+  });
+});

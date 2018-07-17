@@ -1,44 +1,30 @@
-import fetch from 'node-fetch';
+import nodeFetch from 'node-fetch';
 import * as fse from 'fs-extra';
 import * as md5 from 'md5';
 import * as fileType from 'file-type';
 import { Image, ScrapParams } from '../redditScrapper';
 
-export const downloadImages = (images: Image[], options: ScrapParams) => {
+export const downloadImages = async (images: Image[], options: ScrapParams) => {
   // download all images
+  await fse.ensureDir(`./public/${options.subReddit}`);
+  return images.map(async (image) => {
+    const buffer = await nodeFetch(image.href).then(res => res.buffer());
 
-  return fse.ensureDir(`./public/${options.subReddit}`)
-    .then(() => {
-      return images.map((image) => {
-        return fetch(image.href)
-          .then(res => res.buffer())
-          .then((buffer) => {
-            const type = fileType(buffer);
-            const name = md5(buffer);
-            const filePath = `./public/${options.subReddit}/${name}.${type.ext}`;
+    const type = fileType(buffer);
+    const name = md5(buffer);
+    const filePath = `./public/${options.subReddit}/${name}.${type.ext}`;
 
-            return fse.outputFile(filePath, buffer)
-              .then(() => {
-                return {
-                  title: image.title,
-                  postLink: image.postLink,
-                  extension: type.ext,
-                  hash: name,
-                  category: options.subReddit
-                };
-              })
-              .catch((err) => {
-                throw new Error(err.message);
-              })
+    await fse.outputFile(filePath, buffer);
 
-          })
-          .catch((err) => {
-            throw new Error(err.message)
-          })
-      })
-    })
-    .catch((err) => {
-      throw new Error(err.message);
-    })
+    return {
+      title: image.title,
+      postLink: image.postLink,
+      extension: type.ext,
+      hash: name,
+      category: options.subReddit,
+    };
+
+  });
+
 
 };
