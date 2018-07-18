@@ -1,6 +1,5 @@
 import { ImageModel } from '../app';
 
-
 export const listAllRoute = async (req, res, next) => {
   const images = await ImageModel.findAll();
 

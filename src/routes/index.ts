@@ -25,7 +25,4 @@ router.post('/download', catchErrors(downloadRoute));
 // delete all images from specify category
 router.post('/delete', catchErrors(deleteRoute));
 
-
-
-
 export default router;

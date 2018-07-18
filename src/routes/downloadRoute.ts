@@ -1,7 +1,6 @@
 import { ImageModel } from '../app';
 import { redditScrapper } from '../scrapper/redditScrapper';
 
-
 export const downloadRoute = async (req, res, next) => {
   if (!req.body.numOfImages || !req.body.subReddit) {
     return res.status(400).send({ message: 'Please post valid data!' });
@@ -15,8 +14,7 @@ export const downloadRoute = async (req, res, next) => {
 
   const images = await redditScrapper(options);
 
-
-  // HANDLE IMAGES
+  // handle images data from scrapper
   const processed = images.map((image) => {
     console.log(image);
     ImageModel.create(image)

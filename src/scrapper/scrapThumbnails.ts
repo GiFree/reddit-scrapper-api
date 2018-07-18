@@ -1,6 +1,6 @@
 import * as puppeteer from 'puppeteer';
-
-import { Image, ScrapParams } from '../redditScrapper';
+import { processImages } from './utils/browser/processImages';
+import { Image, ScrapParams } from './redditScrapper';
 
 
 /* tslint:disable-next-line max-line-length */
@@ -18,24 +18,7 @@ export const scrapThumbnails = async (params: ScrapParams, browser: puppeteer.Br
 
 
   // collect image titles and hrefs from page
-  const evaluatedData: Image[] = await page.evaluate((param) => {
-    // BROWSER CODE -- start
-
-    const elements = Array.from(document.querySelectorAll('img.media-element'));
-
-    return elements.map((post: HTMLImageElement) => {
-      const href = post.src;
-      const parent: any = post.parentElement.parentElement.parentElement;
-      const title = parent.href.split('/')[7].split('_').join(' ');
-      const postLink = parent.href;
-      post.className = '.done';
-      return { title, href, postLink };
-    });
-
-    // BROWSER CODE -- end
-
-    /* tslint:disable-next-line align */
-  }, params);
+  const evaluatedData: Image[] = await page.evaluate(processImages, params);
 
   images = images.concat(evaluatedData);
 

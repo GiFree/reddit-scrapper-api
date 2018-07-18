@@ -1,35 +1,7 @@
-
-const sequelizeConfig = {
-  database: 'test',
-  username: 'postgres',
-  password: 'Q@wertyuiop',
-  dialect: 'postgres',
-  host: 'localhost',
+export const sequelizeConfig = {
+  username: process.env.DB_USERNAME || 'postgres',
+  password: process.env.DB_PASSWORD || 'Q@wertyuiop',
+  database: process.env.DB_NAME || 'test',
+  host: process.env.DB_HOSTNAME || 'localhost',
+  dialect: process.env.DB_DIALECT || 'postgres',
 };
-
-
-// TESTS
-const newImage = (num, cat) => {
-  return {
-    title: num,
-    postLink: num,
-    extension: num,
-    hash: num,
-    category: cat,
-  };
-};
-
-const seedData = [
-  newImage('1', '1'),
-  newImage('2', '1'),
-  newImage('3', '1'),
-  newImage('4', '2'),
-  newImage('5', '2'),
-  newImage('6', '2'),
-  newImage('7', '2'),
-  newImage('8', '2'),
-];
-
-
-
-export { sequelizeConfig, seedData };

@@ -1,6 +1,6 @@
 import * as puppeteer from 'puppeteer';
-import { scrapThumbnails } from './functions/scrapThumbnails';
-import { downloadImages } from './functions/downloadImages';
+import { scrapThumbnails } from './scrapThumbnails';
+import { downloadImages } from './utils/downloadImages';
 
 export interface ScrapParams {
   numOfImages: number;

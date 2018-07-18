@@ -1,4 +1,4 @@
-import { seedData } from '../config';
+import { seedData } from './seed';
 import app, { ImageModel } from '../app';
 import * as request from 'supertest';
 
@@ -18,7 +18,7 @@ describe('Test the "/" path', () => {
   });
 });
 
-// LIST.TS
+// listRoute
 describe('Test the "/list" path', () => {
   test('It should response the GET method', (done) => {
     return request(app)
@@ -46,38 +46,6 @@ describe('Test the "/list:category" path for category 1', () => {
           });
       });
   });
-});
-
-// TO BE REMOVED
-describe('Test the "/clear" path', () => {
-
-  test('It should response with message', (done) => {
-
-    request(app)
-      .post('/clear')
-      .expect(200)
-      .then((res) => {
-        expect(res.body.message).toBe('Successfully cleared dropped table data');
-        done();
-      });
-
-  });
-
-  test('It response with empty Array', (done) => {
-
-    request(app)
-      .post('/clear')
-      .then(() => {
-        request(app)
-          .get('/list')
-          .expect(200)
-          .then((res) => {
-            expect(res.body.response).toEqual([]);
-            done();
-          });
-      });
-  });
-
 });
 
 // DELETE.TS
@@ -109,7 +77,7 @@ describe('Test the /delete post request', () => {
   });
 });
 
-// DOWNLOAD.TS
+// downloadRoute
 describe('Test the /download request', () => {
   test('It returns error when no data posted', (done) => {
     request(app)
@@ -121,16 +89,4 @@ describe('Test the /download request', () => {
       });
   });
 
-  // THIS TEST NEED TO BE CONNECTED TO INTERNET
-  // COMMENTED CAUSE OF LONGER EXECUTION TIME THAN TIMEOUT SET BY JEST
-  // test('Adds data to database from specified category and specified length', (done) => {
-  //   request(app)
-  //     .post('/download')
-  //     .send({ numOfImages: 10, subReddit: 'memes' })
-  //     .expect(200)
-  //     .then((res) => {
-  //       expect(res.body.message).toBe('Processing done!');
-  //       done();
-  //     })
-  // })
 });

@@ -1,3 +1,5 @@
+/* tslint:disable variable-name */
+
 const Image = (sequelize, DataTypes) => {
 
   const ImageModel = sequelize.define('image', {
@@ -16,10 +18,10 @@ const Image = (sequelize, DataTypes) => {
     },
     category: {
       type: DataTypes.STRING,
-    }
+    },
   });
 
   return ImageModel;
-}
+};
 
 export { Image };
